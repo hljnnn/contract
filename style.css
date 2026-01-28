@@ -1,0 +1,22 @@
+/* Ensure the sign-here button is hidden until the box opens */
+.contract-invite {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: #b33951;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    opacity: 0;
+    /* Appears softly after the ring has finished rising */
+    transition: all 0.5s ease 2.5s; 
+    z-index: 20;
+}
+
+.box-container.open .contract-invite {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
