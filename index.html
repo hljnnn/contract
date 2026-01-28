@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Official Love Treaty</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ring.css">
     <link rel="stylesheet" href="media.css">
-    
+
     <style>
         body { background: #fff1f3; flex-direction: column; height: 100vh; display: flex; justify-content: center; align-items: center; }
         .contract-page {
@@ -49,23 +49,30 @@ p {
     </div>
 
     <script>
-        function runAway() {
-            const btn = document.getElementById('noBtn');
-            // Logic to move the button within the screen boundaries
-            const x = Math.random() * (window.innerWidth - 100);
-            const y = Math.random() * (window.innerHeight - 50);
-            btn.style.left = x + 'px';
-            btn.style.top = y + 'px';
-        }
+    function runAway() {
+        const btn = document.getElementById('noBtn');
+        
+        // Calculate safe boundaries so the button doesn't go off-screen
+        // We subtract the button's size (approx 100x50) from the total window size
+        const maxX = window.innerWidth - 100;
+        const maxY = window.innerHeight - 50;
 
-        function celebrate() {
-            document.getElementById('main-content').innerHTML = `
-                <h1>💍 It's a Deal!</h1>
-                <p>Contract signed! You can't take it back now. ❤️</p>
-                <button class="btn yes-btn" onclick="window.location.href='ring.html'">Ring</button>
-            `;
-            document.body.style.background = "radial-gradient(#ffb3c6, #ff8fa3)";
-        }
-    </script>
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+
+        // Apply coordinates
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+        
+        // Ensure it stays on top of everything
+        btn.style.position = 'fixed'; 
+        btn.style.zIndex = '999';
+    }
+
+    function celebrate() {
+        // Your existing celebrate function logic...
+        window.location.href = 'congratulation.html';
+    }
+</script>
 </body>
 </html>
