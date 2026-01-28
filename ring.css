@@ -265,3 +265,12 @@ body {
     font-size: 18px;
     text-shadow: 1px 1px 0px white;
 }
+
+.no-btn {
+    background: #f44336;
+    color: white;
+    /* Use 'fixed' so it moves relative to the phone screen, not the container */
+    position: fixed; 
+    transition: all 0.1s ease; /* Makes the jump look smooth but fast */
+    touch-action: none; /* Prevents the phone from zooming while trying to click */
+}
